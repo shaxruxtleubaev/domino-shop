@@ -1,0 +1,179 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="{% static 'contact.css' %}" />
+    <link rel="stylesheet" href="{% static 'container.css' %}" />
+    <link rel="stylesheet" href="{% static 'footer.css' %}" />
+    <link rel="stylesheet" href="{% static 'header.css' %}" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="container">
+          <div class="header">
+            <div class="logo">
+              <a href="/" style="text-decoration: none; color: white">Domino</a>
+            </div>
+            <ul class="navbar">
+              <a href="{% url 'products' %}">
+                <li>Products</li>
+              </a>
+              <a href="{% url 'contacts' %}">
+                <li>Contact</li>
+              </a>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="contact_container">
+        <div class="title">
+          <h2>Магазин Domino</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum,
+            explicabo consectetur eius esse architecto vitae magnam sed nam
+            eaque exercitationem enim, asperiores omnis optio necessitatibus
+            sunt, natus totam doloremque voluptatum!
+          </p>
+        </div>
+        <div class="border_2"></div>
+        <div class="content">
+          <div class="left-side">
+            <div class="address details">
+              <i class="fas fa-map-marker-alt"></i>
+              <div class="topic">Address</div>
+              <div class="text-one">Maxim Gorka, Primus school</div>
+            </div>
+            <div class="phone details">
+              <i class="fas fa-phone-alt"></i>
+              <div class="topic">Phone</div>
+              <div class="text-one">
+                <a href="tel:+4733378901">+998999999999</a>
+              </div>
+              <div class="text-two">
+                <a href="tel:+4733378901">+998999999999</a>
+              </div>
+            </div>
+            <div class="email details">
+              <i class="fas fa-envelope"></i>
+              <div class="topic">Emails</div>
+              <div class="text-one">example@example.com</div>
+              <div class="text-two">example@example.com</div>
+            </div>
+          </div>
+          <div class="right-side">
+            <div class="topic-text">Map</div>
+            <iframe
+              class="map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2943.589489292071!2d59.618136575896344!3d42.457749771183956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41dd9b40afdd4289%3A0x6d95355fcc5f440d!2sPrimus%20School%20Nukus!5e0!3m2!1sru!2s!4v1681417792957!5m2!1sru!2s"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <main>
+          <!-- Header в Footer -->
+          <div class="col">
+            <h1>Quick Links</h1>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Products</a></li>
+            </ul>
+          </div>
+
+          <!-- Вопросы -->
+          <div class="col">
+            <h1>Help</h1>
+            <ul>
+              <li><a href="#">How is the order?</a></li>
+              <li><a href="#">How to return money?</a></li>
+              <li><a href="#">Track my order</a></li>
+            </ul>
+          </div>
+
+          <!-- Категория -->
+          <div class="col">
+            <h1>Category Name</h1>
+            <ul>
+              <li><a href="#">Page Name</a></li>
+              <li><a href="#">Page Name</a></li>
+              <li><a href="#">Page Name</a></li>
+              <li><a href="#">Page Name</a></li>
+              <li><a href="#">Page Name</a></li>
+              <li><a href="#">Page Name</a></li>
+            </ul>
+          </div>
+
+          <!-- Категория -->
+          <div class="col">
+            <h1>Category Name</h1>
+            <ul>
+              <li><a href="#">Page Name</a></li>
+              <li><a href="#">Page Name</a></li>
+              <li><a href="#">Page Name</a></li>
+              <li><a href="#">Page Name</a></li>
+              <li><a href="#">Page Name</a></li>
+              <li><a href="#">Page Name</a></li>
+            </ul>
+          </div>
+
+          <!-- Категория -->
+          <div class="col">
+            <h1>Category Name</h1>
+            <ul>
+              <li><a href="#">Page Name</a></li>
+              <li><a href="#">Page Name</a></li>
+              <li><a href="#">Page Name</a></li>
+              <li><a href="#">Page Name</a></li>
+              <li><a href="#">Page Name</a></li>
+              <li><a href="#">Page Name</a></li>
+            </ul>
+          </div>
+
+          <!-- Социалки -->
+          <div class="col social">
+            <h1>Social</h1>
+            <ul>
+              <li>
+                <i
+                  class="fa-brands fa-tiktok"
+                  style="color: #ffffff; font-size: 20px"
+                ></i>
+              </li>
+              <li>
+                <i
+                  class="fa-brands fa-telegram"
+                  style="color: #ffffff; font-size: 20px"
+                ></i>
+              </li>
+              <li>
+                <i
+                  class="fa-brands fa-instagram"
+                  style="color: #ffffff; font-size: 20px"
+                ></i>
+              </li>
+            </ul>
+          </div>
+          <div class="clearfix"></div>
+        </main>
+      </footer>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

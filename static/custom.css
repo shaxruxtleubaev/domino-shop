@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+}
+body,
+html {
+  background: whitesmoke;
+}
+
+body {
+  background-image: url("/uploads/img/back.jpg");
+  background-repeat: no-repeat;
+  background-position: center -80px;
+  background-size: cover;
+}
+
+a {
+  text-decoration: none;
+}
+img {
+  width: 100%;
+}
+li {
+  list-style: none;
+}
+
+.single_container {
+  padding: 0 20px;
+  padding-top: 163px;
+}
+
+.wrapper {
+  display: flex;
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.wrapper .images {
+  flex: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+.wrapper .product {
+  flex: 1;
+}
+.product .title {
+  padding: 0;
+  font-weight: 900;
+  margin: 20px 0 10px;
+  font-size: 30px;
+}
+
+.product .product-h1 {
+  font-size: 1.2rem;
+  color: grey;
+}
+.product .price {
+  margin: 10px 0;
+  font-size: 28px;
+  color: #e00034;
+}
+.product p {
+  padding: 0 10px;
+  font-weight: 900;
+}
+.product-img {
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 1000px) {
+  .wrapper .images {
+    grid-template-columns: 1fr !important;
+    flex: 1;
+  }
+}
+
+@media only screen and (max-width: 690px) {
+  body{
+    background-position: top;
+  }
+  .single_container {
+    padding-top: 80px;
+  }
+  .wrapper {
+    flex-direction: column;
+  }
+}

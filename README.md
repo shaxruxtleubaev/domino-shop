@@ -7,13 +7,15 @@
 
 ## Installation
 ### Windows
-Install `python3.10` or later. You can use the Windows [installer][] of your choice.
+1. Install `python3.10` or later. You can use the Windows [installer][] of your choice.
+2. Install `virtualenv` by using command `py -m pip install --user virtualenv`
 
 ### Linux
 1. Install  `python3.10` or later. You can use the linux terminal for your installation.
 2. Run the command `sudo apt update` in your linux terminal
 3. Run the command `sudo apt install python3.10`
 4. Check it with the command `python3 -version`. If you see the output like `Python 3.10`, you are done!
+5. Install `virtualenv` by using the cpmmand `python3 -m pip install --user virtualenv`
 
 ## Set up the project 
 Create virtualenv

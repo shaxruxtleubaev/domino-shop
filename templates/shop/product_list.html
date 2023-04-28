@@ -1,0 +1,144 @@
+{% load static %} {% load humanize %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Domino Shop</title>
+	<link rel="stylesheet" href="{% static 'category.css' %}" />
+    <link rel="stylesheet" href="{% static 'header.css' %}" />
+    <link rel="stylesheet" href="{% static 'footer.css' %}" />
+    <link rel="stylesheet" href="{% static 'container.css' %}" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header">
+          <div class="logo">
+            <a href="/" style="text-decoration: none; color: white">Domino</a>
+          </div>
+          <ul class="navbar">
+            <a href="{% url 'products' %}">
+              <li>Products</li>
+            </a>
+            <a href="{% url 'contacts' %}">
+              <li>Contact</li>
+            </a>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+	<div class="container">
+		<h1>Все товары</h1>
+	  </div>
+  
+	  <div class="container">
+		<div class="cards">
+			{% for p in products %}
+		  <a href="products/item-{{p.id}}">
+			<div class="swiper_card">
+			  <div class="swiper_img">
+				<img src="{{p.main_img.url}}" alt="" />
+			  </div>
+			  <div class="info_text">
+				<h3>{{p.product_name}}</h3>
+				<p>{{p.price|intcomma}} сум</p>
+			  </div>
+			  <span>Выгодная цена</span>
+			</div>
+		  </a>
+		  {% endfor %}
+		</div>
+	  </div>
+
+    <footer>
+      <main>
+        <!-- Header в Footer -->
+        <div class="col">
+          <h1>Quick Links</h1>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Products</a></li>
+          </ul>
+        </div>
+
+        <!-- Вопросы -->
+        <div class="col">
+          <h1>Help</h1>
+          <ul>
+            <li><a href="#">How is the order?</a></li>
+            <li><a href="#">How to return money?</a></li>
+            <li><a href="#">Track my order</a></li>
+          </ul>
+        </div>
+
+        <!-- Категория -->
+        <div class="col">
+          <h1>Category Name</h1>
+          <ul>
+            <li><a href="#">Page Name</a></li>
+            <li><a href="#">Page Name</a></li>
+            <li><a href="#">Page Name</a></li>
+            <li><a href="#">Page Name</a></li>
+            <li><a href="#">Page Name</a></li>
+            <li><a href="#">Page Name</a></li>
+          </ul>
+        </div>
+
+        <!-- Категория -->
+        <div class="col">
+          <h1>Category Name</h1>
+          <ul>
+            <li><a href="#">Page Name</a></li>
+            <li><a href="#">Page Name</a></li>
+            <li><a href="#">Page Name</a></li>
+            <li><a href="#">Page Name</a></li>
+            <li><a href="#">Page Name</a></li>
+            <li><a href="#">Page Name</a></li>
+          </ul>
+        </div>
+
+        <!-- Категория -->
+        <div class="col">
+          <h1>Category Name</h1>
+          <ul>
+            <li><a href="#">Page Name</a></li>
+            <li><a href="#">Page Name</a></li>
+            <li><a href="#">Page Name</a></li>
+            <li><a href="#">Page Name</a></li>
+            <li><a href="#">Page Name</a></li>
+            <li><a href="#">Page Name</a></li>
+          </ul>
+        </div>
+
+        <!-- Социалки -->
+        <div class="col social">
+          <h1>Social</h1>
+          <ul>
+            <li>
+              <i
+                class="fa-brands fa-tiktok"
+                style="color: #ffffff; font-size: 20px"
+              ></i>
+            </li>
+            <li>
+              <i
+                class="fa-brands fa-telegram"
+                style="color: #ffffff; font-size: 20px"
+              ></i>
+            </li>
+            <li>
+              <i
+                class="fa-brands fa-instagram"
+                style="color: #ffffff; font-size: 20px"
+              ></i>
+            </li>
+          </ul>
+        </div>
+        <div class="clearfix"></div>
+      </main>
+    </footer>
+  </body>
+</html>

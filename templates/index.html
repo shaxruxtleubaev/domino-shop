@@ -1,0 +1,206 @@
+{% load static %} {% load humanize %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Domino Shop</title>
+
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link rel="stylesheet" href="{% static 'container.css' %}" />
+    <link rel="stylesheet" href="{% static 'footer.css' %}" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <link rel="icon" href="" type="image/x-icon" />
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="header">
+          <div class="logo">
+            <a href="/" style="text-decoration: none; color: white">Domino</a>
+          </div>
+          <ul class="navbar">
+            <a href="{% url 'products' %}">
+              <li>Products</li>
+            </a>
+            <a href="{% url 'contacts' %}">
+              <li>Contact</li>
+            </a>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="banner"></div>
+    <section class="info">
+      <div class="container">
+        <div class="title">
+          <h1>Domino</h1>
+          <p>Что мешает тебе быть стильным?</p>
+        </div>
+        <div class="content">
+          <div class="corusel">
+            <h2>Новинки этого месяца</h2>
+            <p>Модные новинки только для вас</p>
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                {% for n in new %}
+                <div class="swiper-slide" data-product-id="{{n.id}}">
+                  <a href="products/item-{{n.id}}/">
+                    <div class="swiper_card">
+                      <div class="swiper_img">
+                        <img src="{{n.main_img.url}}" alt="" />
+                      </div>
+                      <div class="info_text">
+                        <h3>{{n.product_name}}</h3>
+                        <p>Цена: {{n.price|intcomma}}</p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+          <div class="corusel">
+            <h2>В тренде</h2>
+            <p>Самые популярные товары недели</p>
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                {% for t in trend %}
+                <div class="swiper-slide" data-product-id="{{t.id}}">
+                  <a href="products/item-{{t.id}}/">
+                    <div class="swiper_card">
+                      <div class="swiper_img">
+                        <img src="{{t.main_img.url}}" alt="" />
+                      </div>
+                      <div class="info_text">
+                        <h3>{{t.product_name}}</h3>
+                        <p>Цена: {{t.price|intcomma}}</p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+          <h2>Категории</h2>
+          <p>Находите то что ищите легко</p>
+          <div class="category">
+            {% for c in categories %}
+            <div class="cat">
+              <a href="{{c.slug}}">
+                <div class="cat_wrapper">
+                  <img src="{{c.category_img.url}}" alt="category img" />
+                  <span>{{c.category_name}}</span>
+                </div>
+              </a>
+            </div>
+            {% endfor %}
+          </div>
+          <footer>
+            <main>
+              <!-- Header в Footer -->
+              <div class="col">
+                <h1>Quick Links</h1>
+                <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Products</a></li>
+                </ul>
+              </div>
+
+              <!-- Вопросы -->
+              <div class="col">
+                <h1>Help</h1>
+                <ul>
+                  <li><a href="#">How is the order?</a></li>
+                  <li><a href="#">How to return money?</a></li>
+                  <li><a href="#">Track my order</a></li>
+                </ul>
+              </div>
+
+              <!-- Категория -->
+              <div class="col">
+                <h1>Category Name</h1>
+                <ul>
+                  <li><a href="#">Page Name</a></li>
+                  <li><a href="#">Page Name</a></li>
+                  <li><a href="#">Page Name</a></li>
+                  <li><a href="#">Page Name</a></li>
+                  <li><a href="#">Page Name</a></li>
+                  <li><a href="#">Page Name</a></li>
+                </ul>
+              </div>
+
+              <!-- Категория -->
+              <div class="col">
+                <h1>Category Name</h1>
+                <ul>
+                  <li><a href="#">Page Name</a></li>
+                  <li><a href="#">Page Name</a></li>
+                  <li><a href="#">Page Name</a></li>
+                  <li><a href="#">Page Name</a></li>
+                  <li><a href="#">Page Name</a></li>
+                  <li><a href="#">Page Name</a></li>
+                </ul>
+              </div>
+
+              <!-- Категория -->
+              <div class="col">
+                <h1>Category Name</h1>
+                <ul>
+                  <li><a href="#">Page Name</a></li>
+                  <li><a href="#">Page Name</a></li>
+                  <li><a href="#">Page Name</a></li>
+                  <li><a href="#">Page Name</a></li>
+                  <li><a href="#">Page Name</a></li>
+                  <li><a href="#">Page Name</a></li>
+                </ul>
+              </div>
+
+              <!-- Социалки -->
+              <div class="col social">
+                <h1>ADMIN</h1>
+                <a href="admin/">
+                  <img src="../uploads/img/admin.svg" class="admin" alt="">
+                </a>
+              </div>
+              <div class="clearfix"></div>
+            </main>
+          </footer>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="{% static 'index.js' %}"></script>
+    <script>
+      const swiper = new Swiper(".swiper", {
+        freeMode: true,
+        breakpoints: {
+          300: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          550: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          920: {
+            slidesPerView: 4.5,
+            spaceBetween: 20,
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

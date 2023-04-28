@@ -1,0 +1,63 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+img {
+  width: 100%;
+}
+
+h1 {
+  font-family: sans-serif;
+  margin-top: 90px;
+}
+
+.swiper_card {
+  position: relative;
+  width: 260px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.swiper_card span {
+  position: absolute;
+  bottom: 30%;
+  right: 0;
+  background-color: rgba(45, 45, 45, 0.8);
+  color: #fff;
+  border-radius: 14px 0 0 14px;
+  font-size: 14px;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+  line-height: 20px;
+  padding: 4px 12px 4px 16px;
+}
+.swiper_card .swiper_img img {
+  border-bottom: none;
+  object-fit: cover;
+  height: 280px;
+}
+.swiper_card .info_text {
+  padding: 5px 10px;
+  color: black;
+}
+.swiper_card .info_text p {
+  color: #e00034;
+  padding-top: 7px;
+  padding-bottom: 10px;
+  font-size: 14px;
+  font-family: sans-serif;
+}

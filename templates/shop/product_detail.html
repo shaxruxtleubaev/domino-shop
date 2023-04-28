@@ -1,0 +1,139 @@
+{% load static %} {% load humanize %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="{% static 'custom.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'header.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'container.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'footer.css' %}" />
+    <title>Domino Shop</title>
+  </head>
+  <body>
+    <div class="banner"></div>
+    <header>
+      <div class="container">
+        <div class="header">
+          <div class="logo">
+            <a href="/" style="text-decoration: none; color: white">Domino</a>
+          </div>
+          <ul class="navbar">
+            <a href="{% url 'products' %}">
+              <li>Products</li>
+            </a>
+            <a href="{% url 'contacts' %}">
+              <li>Contact</li>
+            </a>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="single_container">
+      <div class="wrapper">
+        <div class="images">
+          <img class="product-img" src="{{product.main_img.url}}" />
+
+          {% if product.image1 %}
+            <img class="product-img" src="{{product.image1.url}}" />
+          {% endif %}
+         </div>
+
+        <div class="product">
+          <p class="title">{{product.product_name}}</p>
+          <h1 class="product-h1">Nike Dunk Low Travis Scott x PlayStation</h1>
+          <h2 class="price">{{product.price|intcomma}} сум</h2>
+          {{product.description|safe}}
+        </div>
+      </div>
+    </div>
+    <footer>
+      <main>
+        <!-- Header в Footer -->
+        <div class="col">
+          <h1>Quick Links</h1>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Products</a></li>
+          </ul>
+        </div>
+
+        <!-- Вопросы -->
+        <div class="col">
+          <h1>Help</h1>
+          <ul>
+            <li><a href="#">How is the order?</a></li>
+            <li><a href="#">How to return money?</a></li>
+            <li><a href="#">Track my order</a></li>
+          </ul>
+        </div>
+
+        <!-- Категория -->
+        <div class="col">
+          <h1>Category Name</h1>
+          <ul>
+            <li><a href="#">Page Name</a></li>
+            <li><a href="#">Page Name</a></li>
+            <li><a href="#">Page Name</a></li>
+            <li><a href="#">Page Name</a></li>
+            <li><a href="#">Page Name</a></li>
+            <li><a href="#">Page Name</a></li>
+          </ul>
+        </div>
+
+        <!-- Категория -->
+        <div class="col">
+          <h1>Category Name</h1>
+          <ul>
+            <li><a href="#">Page Name</a></li>
+            <li><a href="#">Page Name</a></li>
+            <li><a href="#">Page Name</a></li>
+            <li><a href="#">Page Name</a></li>
+            <li><a href="#">Page Name</a></li>
+            <li><a href="#">Page Name</a></li>
+          </ul>
+        </div>
+
+        <!-- Категория -->
+        <div class="col">
+          <h1>Category Name</h1>
+          <ul>
+            <li><a href="#">Page Name</a></li>
+            <li><a href="#">Page Name</a></li>
+            <li><a href="#">Page Name</a></li>
+            <li><a href="#">Page Name</a></li>
+            <li><a href="#">Page Name</a></li>
+            <li><a href="#">Page Name</a></li>
+          </ul>
+        </div>
+
+        <!-- Социалки -->
+        <div class="col social">
+          <h1>Social</h1>
+          <ul>
+            <li>
+              <i
+                class="fa-brands fa-tiktok"
+                style="color: #ffffff; font-size: 20px"
+              ></i>
+            </li>
+            <li>
+              <i
+                class="fa-brands fa-telegram"
+                style="color: #ffffff; font-size: 20px"
+              ></i>
+            </li>
+            <li>
+              <i
+                class="fa-brands fa-instagram"
+                style="color: #ffffff; font-size: 20px"
+              ></i>
+            </li>
+          </ul>
+        </div>
+        <div class="clearfix"></div>
+      </main>
+    </footer>
+  </body>
+</html>
